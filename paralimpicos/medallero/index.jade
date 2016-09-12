@@ -1,0 +1,44 @@
+- location = "medallero"
+- title = "Medallero de los Juegos Paralímpicos Rio 2016 | Claro Sports"
+- description = "Consulta las medallas que ha ganado cada país en los juegos paralímpicos Río 2016 por Claro Sports."
+- keywords = "Medallas por País en los Juegos Paralímpicos Rio, Medallero de los Juegos Paralímpicos 2016, Juegos Paralímpicos Rio 2016, Clarosports"
+
+include ../../jade/includes/mixines
+
+doctype html
+html
+	include ../../jade/includes/head
+	body
+		+comscore('medallero')
+		+pixeles()
+		include ../../jade/includes/top-bar
+		include ../../jade/includes/header
+
+		// ========================
+		// Panel Sponsor
+		// ========================
+		+sponsored('Medallero')
+		
+		// ========================
+		// Seccion principal
+		// ========================
+		section.main-section#main-section
+			.container.widget-main-container
+				table#medallero-content
+					tr
+						th #
+						th País
+						th Oro
+						th Plata
+						th Bronce
+						th Total
+
+				script(src="/paralimpicos/js/medallero.js#{version}")
+					
+						
+			.banner
+				.leaderboard
+					+item-banner("div-lb02")
+				
+		include ../../jade/includes/footer
+		

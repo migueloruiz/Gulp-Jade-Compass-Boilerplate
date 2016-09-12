@@ -1,0 +1,244 @@
+{
+	"items" : [
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/1.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"1 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/2.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"2 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle-video/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/3.png",
+			"tipo"			:	"video",
+			"titulo"		:	"3 Mexicanos visitan sede de Copa Mundial de clavados",
+			"descr" 		:	"Optio sunt quod corporis reprehenderit ad voluptate, labore nulla, repellendus voluptatibus sequi, sed vel natus dolor nesciunt obcaecati ullam aut neque nam.",
+			"fecha" 		:	"2016-02-12 12:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/4.png",
+			"tipo"			:	"galeria",
+			"titulo"		:	"4 Zavala con buena puntería rumbo a Río 2016",
+			"descr" 		:	"A rem maiores ipsa hic, voluptas nulla minima alias voluptates, tempora laudantium blanditiis impedit nemo obcaecati sit eum fugit quae eligendi assumenda.",
+			"fecha" 		:	"2016-02-03 18:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/5.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"5 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/6.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"6 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle-video/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/7.png",
+			"tipo"			:	"video",
+			"titulo"		:	"7 Mexicanos visitan sede de Copa Mundial de clavados",
+			"descr" 		:	"Optio sunt quod corporis reprehenderit ad voluptate, labore nulla, repellendus voluptatibus sequi, sed vel natus dolor nesciunt obcaecati ullam aut neque nam.",
+			"fecha" 		:	"2016-02-12 12:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/8.png",
+			"tipo"			:	"galeria",
+			"titulo"		:	"8 Zavala con buena puntería rumbo a Río 2016",
+			"descr" 		:	"A rem maiores ipsa hic, voluptas nulla minima alias voluptates, tempora laudantium blanditiis impedit nemo obcaecati sit eum fugit quae eligendi assumenda.",
+			"fecha" 		:	"2016-02-03 18:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/9.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"9 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/0.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"10 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/1.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"1 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/2.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"2 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle-video/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/3.png",
+			"tipo"			:	"video",
+			"titulo"		:	"3 Mexicanos visitan sede de Copa Mundial de clavados",
+			"descr" 		:	"Optio sunt quod corporis reprehenderit ad voluptate, labore nulla, repellendus voluptatibus sequi, sed vel natus dolor nesciunt obcaecati ullam aut neque nam.",
+			"fecha" 		:	"2016-02-12 12:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/4.png",
+			"tipo"			:	"galeria",
+			"titulo"		:	"4 Zavala con buena puntería rumbo a Río 2016",
+			"descr" 		:	"A rem maiores ipsa hic, voluptas nulla minima alias voluptates, tempora laudantium blanditiis impedit nemo obcaecati sit eum fugit quae eligendi assumenda.",
+			"fecha" 		:	"2016-02-03 18:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/5.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"5 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/6.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"6 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle-video/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/7.png",
+			"tipo"			:	"video",
+			"titulo"		:	"7 Mexicanos visitan sede de Copa Mundial de clavados",
+			"descr" 		:	"Optio sunt quod corporis reprehenderit ad voluptate, labore nulla, repellendus voluptatibus sequi, sed vel natus dolor nesciunt obcaecati ullam aut neque nam.",
+			"fecha" 		:	"2016-02-12 12:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/8.png",
+			"tipo"			:	"galeria",
+			"titulo"		:	"8 Zavala con buena puntería rumbo a Río 2016",
+			"descr" 		:	"A rem maiores ipsa hic, voluptas nulla minima alias voluptates, tempora laudantium blanditiis impedit nemo obcaecati sit eum fugit quae eligendi assumenda.",
+			"fecha" 		:	"2016-02-03 18:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/9.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"9 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/0.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"10 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/1.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"1 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/2.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"2 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle-video/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/3.png",
+			"tipo"			:	"video",
+			"titulo"		:	"3 Mexicanos visitan sede de Copa Mundial de clavados",
+			"descr" 		:	"Optio sunt quod corporis reprehenderit ad voluptate, labore nulla, repellendus voluptatibus sequi, sed vel natus dolor nesciunt obcaecati ullam aut neque nam.",
+			"fecha" 		:	"2016-02-12 12:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/4.png",
+			"tipo"			:	"galeria",
+			"titulo"		:	"4 Zavala con buena puntería rumbo a Río 2016",
+			"descr" 		:	"A rem maiores ipsa hic, voluptas nulla minima alias voluptates, tempora laudantium blanditiis impedit nemo obcaecati sit eum fugit quae eligendi assumenda.",
+			"fecha" 		:	"2016-02-03 18:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/5.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"5 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/6.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"6 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle-video/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/7.png",
+			"tipo"			:	"video",
+			"titulo"		:	"7 Mexicanos visitan sede de Copa Mundial de clavados",
+			"descr" 		:	"Optio sunt quod corporis reprehenderit ad voluptate, labore nulla, repellendus voluptatibus sequi, sed vel natus dolor nesciunt obcaecati ullam aut neque nam.",
+			"fecha" 		:	"2016-02-12 12:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/8.png",
+			"tipo"			:	"galeria",
+			"titulo"		:	"8 Zavala con buena puntería rumbo a Río 2016",
+			"descr" 		:	"A rem maiores ipsa hic, voluptas nulla minima alias voluptates, tempora laudantium blanditiis impedit nemo obcaecati sit eum fugit quae eligendi assumenda.",
+			"fecha" 		:	"2016-02-03 18:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/9.png",
+			"tipo"			:	"infografia",
+			"titulo"		:	"9 Jefe de atletismo en Kenia deja cargo",
+			"descr" 		:	"Officia eos expedita excepturi saepe eveniet doloremque beatae laudantium odit blanditiis non. Necessitatibus assumenda in veniam.",
+			"fecha" 		:	"2016-02-18 17:30"
+		},
+		{
+			"url"			: 	"/paralimpicos/detalle/",
+			"url_imagen"	: 	"/paralimpicos/img/lorempixel/0.png",
+			"tipo"			:	"articulo",
+			"titulo"		:	"10 Breves de camino a Río 2016",
+			"descr" 		:	"Unde, ad in odit tempora cumque inventore sed quisquam. Quas, soluta. Maxime, ratione. Corporis dolorem ullam, est, earum suscipit mollitia excepturi consequuntur!",
+			"fecha" 		:	"2016-02-16 09:30"
+		}
+	]
+}

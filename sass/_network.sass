@@ -1,0 +1,79 @@
+.network
+	text-align: center
+	background: #888 url("img/bg-redes.png") bottom center no-repeat
+	background-size: cover
+	color: #fff
+	padding: 0 $spacer/2 $spacer*2
+	+box-sizing(border-box)
+	.tweets
+		max-width: 1000px
+		margin: $spacer auto 0
+		position: relative
+		min-height: 150px
+		@extend %clearfix
+		>div
+			padding: 0 30px
+			+box-sizing(border-box)
+			img, .interact
+				display: none
+			a
+				font-weight: bold
+				color: $red
+			p, a, span
+				line-height: 1.5
+				word-wrap: break-word
+			ul li
+				max-width: 700px
+				margin: 0 auto
+				&:not(:first-child)
+					display: none
+			.user span
+				font-size: 1.1em
+				&:first-child, &[data-scribe="element:name"], &[data-scribe="element:verified_badge"]
+					display: none !important
+			.timePosted
+				margin-top: $spacer
+			.tweet, .timePosted
+				margin: 1em 0
+
+		i
+			position: absolute
+			width: 30px
+			height: 40px
+			font-size: 40px
+			top: 50%
+			margin-top: -20px
+			&.fa-angle-left
+				left: 0px
+			&.fa-angle-right
+				right: 0px
+			&:hover
+				cursor: pointer
+
+	>a
+		font-size: 25px
+		margin: 0 $spacer/4
+		width: 50px
+		height: 50px
+		display: inline-block
+		position: relative
+		top: 0px
+		color: #fff
+		+border-radius(200px)
+		+transition(top 0.3s ease)
+		&:hover
+			top: -5px
+		i
+			text-align: center
+			line-height: 50px
+
+		&.fb
+			background: $facebook
+		&.tw
+			background: $twitter
+		&.yt
+			background: $youtube
+		&.ig
+			background: $instagram
+		&.gp
+			background: $googlePlus

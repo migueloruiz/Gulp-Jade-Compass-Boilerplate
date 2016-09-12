@@ -1,0 +1,35 @@
+- location = "inicio"
+- home = true
+- title = "Juegos Paralímpicos Rio 2016 | Claro Sports"
+- description = "No te pierdas la mejor cobertura de los juegos paralímpicos Río 2016 con transmisiones en vivo y los mejores videos bajo demanda por Claro Sports."
+- keywords = "Cobertura de los Juegos Paralímpicos, Juegos Paralímpicos Rio 2016, Juegos Paralímpicos 2016, Clarosports"
+
+include ../jade/includes/mixines
+
+doctype html
+html
+	include ../jade/includes/head
+	body
+		+comscore('home')
+		+pixeles()
+		include ../jade/includes/top-bar
+		include ../jade/includes/header
+
+		// ========================
+		// Seccion principal
+		// ========================
+		section.main-section#main-section
+			.container.widget-main-container
+				#home-content
+
+				script(src="/paralimpicos/js/home.js#{version}")
+				
+			.banner
+				.leaderboard
+					+item-banner("div-lb02")
+
+		include ../jade/includes/footer
+		
+
+		
+		

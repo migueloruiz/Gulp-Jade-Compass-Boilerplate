@@ -1,0 +1,60 @@
+- location = "en-vivo"
+- home = true
+- title = "Juegos Paralímpicos Rio 2016 en Vivo | Claro Sports"
+- description = "Disfruta de las transmisiones en vivo de los juegos paralímpicos Rio 2016 por Claro Sports"
+- keywords = "Transmisión en Vivo de los Juegos Paralímpicos Rio 2016, Juegos Paralímpicos 2016 en Vivo, Juegos Paralímpicos Rio 2016, Clarosports"
+
+include ../../jade/includes/mixines
+
+doctype html
+html
+	include ../../jade/includes/head
+	body
+		+comscore('en-vivo')
+		+pixeles()
+		include ../../jade/includes/top-bar
+		include ../../jade/includes/header
+
+		// ========================
+		// Panel Sponsor
+		// ========================
+		+sponsored('En Vivo')
+
+		// ========================
+		// Seccion principal
+		// ========================
+		section.main-section#main-section
+			.container.widget-main-container#live-content(style="padding-bottom: 0px !important;")
+
+				#ooyalaPlayer
+				.channel-buttons
+					a(href="#")#canal1 Canal #[span 1]
+					a(href="#")#canal2 Canal #[span 2]
+					a(href="#")#canal3 Canal #[span 3]
+					a(href="#")#canal4 Claro #[span Sports]
+
+				script(src="//player.ooyala.com/static/v4/stable/4.4.7/core.min.js")
+				script(src="//player.ooyala.com/static/v4/stable/4.4.7/video-plugin/main_html5.min.js")
+				script(src="//player.ooyala.com/static/v4/stable/4.4.7/skin-plugin/html5-skin.min.js")
+				script(src="//player.ooyala.com/static/v4/stable/4.4.7/video-plugin/bit_wrapper.min.js")
+				script(src="//player.ooyala.com/static/v4/stable/4.4.7/video-plugin/osmf_flash.min.js")
+				script(src="//player.ooyala.com/static/v4/stable/4.4.7/ad-plugin/google_ima.js")
+				link(href="//player.ooyala.com/static/v4/stable/4.4.7/skin-plugin/html5-skin.min.css" rel="stylesheet")
+				
+				script(src="/paralimpicos/js/en-vivo.js#{version}")
+
+				noscript
+					div Por favor habilite Javascript en su navegador para ver este video.
+			
+				h2.advice Programación sujeta a cambio, sin previo aviso. 
+
+			.schedule#schedule-content
+
+			script(src="/paralimpicos/js/agenda-en-vivo.js#{version}")
+
+			.banner
+				.leaderboard
+					+item-banner("div-lb02")
+
+		include ../../jade/includes/footer
+		

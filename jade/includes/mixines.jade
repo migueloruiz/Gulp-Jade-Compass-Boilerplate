@@ -1,0 +1,132 @@
+- version = "?v=1.2"
+
+mixin sponsored(title)
+    .panel-sponsor
+        .container
+            if( title !== '' )
+                h1 #{title}
+            #banner-presenting
+                //- a(href="#").banner-presenting
+                //- 	h4
+                //- 		span.presented Es traido a ti, por:
+                //- 		img(src="img/logo-sponsor.png", alt="#")
+                //- 		span.slogan "Slogan de la compañía"
+
+mixin item-small(title, type, number)
+    a(href="noticia-articulo.html").item-small
+        .thumb
+            img(src="http://lorempixel.com/350/246/sports/#{number}")
+            if (type == 'video')
+                i.fa.fa-play
+            if (type == 'gallery')
+                i.fa.fa-picture-o
+        h3 #{title}
+        .meta
+            span 20/03/14
+            span 17:56
+            
+mixin comscore(section)
+    // ========================
+    // Google Tag Manager
+    // ========================
+    noscript
+        iframe(src="//www.googletagmanager.com/ns.html?id=GTM-MZ9LJ5" height="0" width="0" style="display:none;visibility:hidden")
+    script.
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MZ9LJ5');
+    // ========================
+    // Comscore
+    // ========================
+    script(type="text/javascript").
+        // <![CDATA[
+        function udm_(a){var b="comScore=",c=document,d=c.cookie,e="",f="indexOf",g="substring",h="length",i=2048,j,k="&ns_",l="&",m,n,o,p,q=window,r=q.encodeURIComponent||escape;if(d[f](b)+1)for(o=0,n=d.split(";"),p=n[h];o<p;o++)m=n[o][f](b),m+1&&(e=l+unescape(n[o][g](m+b[h])));a+=k+"_t="+ +(new Date)+k+"c="+(c.characterSet||c.defaultCharset||"")+"&c8="+r(c.title)+e+"&c7="+r(c.URL)+"&c9="+r(c.referrer),a[h]>i&&a[f](l)>0&&(j=a[g](0,i-8).lastIndexOf(l),a=(a[g](0,j)+k+"cut="+r(a[g](j+1)))[g](0,i)),c.images?(m=new Image,q.ns_p||(ns_p=m),m.src=a):c.write("<","p","><",'img src="',a,'" height="1" width="1" alt="*"',"><","/p",">")}
+        udm_('http'+(document.location.href.charAt(4)=='s'?'s://sb':'://b')+'.scorecardresearch.com/p?c1=2&c2=17304295&ns_site=claro-sports&name=clarosports.paralimpicos.#{section}');
+        // ]]>
+    noscript
+        p 
+            img(src="http://b.scorecardresearch.com/p?c1=2&amp;c2=17304295&amp;ns_site=claro-sports&amp;name=clarosports.paralimpicos.#{section}" height="1" width="1" alt="*")
+            
+mixin pixeles()
+    //- // ========================
+    //- // Google Code para remarketing
+    //- // ========================
+    //- script(type="text/javascript").
+    //-     // <![CDATA[
+    //-     var google_conversion_id = 945296607;
+    //-     var google_custom_params = window.google_tag_params;
+    //-     var google_remarketing_only = true;
+    //-     // ]]>
+    //- script(type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js")
+    //- noscript.pixeles
+    //-     div(style="display:inline;")
+    //-         img(height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/945296607/?value=0&amp;guid=ON&amp;script=0")
+
+    //- // ========================
+    //- // Google Code para CMI
+    //- // ========================
+    //- script(type="text/javascript").
+    //-     // <![CDATA[ 
+    //-     var google_conversion_id = 945296607;
+    //-     var google_conversion_language = "en";
+    //-     var google_conversion_format = "3";
+    //-     var google_conversion_color = "ffffff";
+    //-     var google_conversion_label = "V5v7CM7EmGgQ36ngwgM";
+    //-     var google_remarketing_only = false;
+    //-     // ]]>
+    //- script(type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js")
+    //- noscript.pixeles
+    //-     div(style="display:inline;")
+    //-         img(height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/945296607/?label=V5v7CM7EmGgQ36ngwgM&amp;guid=ON&amp;script=0")
+        
+    //- // ========================
+    //- // Facebook Pixel Code
+    //- // ========================    
+    //- script(type="text/javascript").
+    //-     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    //-     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    //-     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    //-     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    //-     document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    //-     fbq('init', '1568351926804705');
+    //-     fbq('track', "PageView");
+    //- noscript.pixeles
+    //-     img(height="1" width="1" src="https://www.facebook.com/tr?id=1568351926804705&ev=PageView&noscript=1")
+    
+    //- // ========================
+    //- // Conversión de pixel
+    //- // ========================  
+    //- img.pixeles(src="https://secure.adnxs.com/px?id=741646&seg=5895198&t=2" width="1" height="1")
+
+    
+    //- // Start of DoubleClick Floodlight Tag: Please do not remove
+    //- // Activity name of this tag: ClaroSports_PyME_Herramientas_Audiencia
+    //- // URL of the webpage where the tag is expected to be placed: http://www.telmex.com/web/negocios/paquetes-telmex-negocio
+    //- // Creation Date: 07/27/2016
+    //- script(type="text/javascript").
+    //-     var axel = Math.random() + "";
+    //-     var a = axel * 10000000000000;
+    //-     document.write('<iframe class="pixeles" src="https://4436228.fls.doubleclick.net/activityi;src=4436228;type=AllSi0;cat=claro0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" ></iframe>');
+    //- noscript
+    //-     iframe.pixeles(src="https://4436228.fls.doubleclick.net/activityi;src=4436228;type=AllSi0;cat=claro0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" )
+    //- // End of DoubleClick Floodlight Tag: Please do not remove 
+
+
+    //- // Start of DoubleClick Floodlight Tag: Please do not remove
+    //- // Activity name of this tag: ClaroSports_PyME_Herramientas_Audiencia
+    //- // URL of the webpage where the tag is expected to be placed: http://www.telmex.com/web/negocios/paquetes-telmex-negocio
+    //- // Creation Date: 07/27/2016
+    //- script(type="text/javascript").
+    //-     var axel = Math.random() + "";
+    //-     var a = axel * 10000000000000;
+    //-     document.write('<iframe class="pixeles" src="https://4436228.fls.doubleclick.net/activityi;src=4436228;type=AllSi0;cat=claro0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" ></iframe>');
+    //- noscript
+    //-     iframe.pixeles(src="https://4436228.fls.doubleclick.net/activityi;src=4436228;type=AllSi0;cat=claro0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0")
+    //- //End of DoubleClick Floodlight Tag: Please do not remove
+    
+mixin item-banner(id)
+    div(id="#{id}")
+        script.
+            googletag.cmd.push(function() { googletag.display("#{id}"); });
