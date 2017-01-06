@@ -1,4 +1,4 @@
-# Sitio Juegos Paralímpicos Rio 2016 #
+# Boilerplate para paguinas estaicas #
 
 ## Instalación ##
 ```
@@ -7,5 +7,5 @@ npm install
 
 ## Compilacion ##
 ```
-gulp compileProject
+gulp
 ```
