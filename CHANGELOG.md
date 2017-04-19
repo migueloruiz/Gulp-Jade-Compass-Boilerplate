@@ -1,5 +1,6 @@
 # [1.0.0] Claro Sports (17-04-2017)
 
+* :wrench: :bug: Error de tooling
 * :books: Correcion README
 *	:rocket: Nueva Version lanzada
 *	:wrench: Se agrega Mocha y Chai para relizar pruebas unitarias

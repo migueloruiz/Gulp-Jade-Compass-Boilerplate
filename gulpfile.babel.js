@@ -35,17 +35,6 @@ const header = require('gulp-header') // Escritura de Header para TimeStamp
 const changed = require('gulp-changed') // Rectificaccion de cambio en arcvhivo destino
 const del = require('del') // Eliminacion de Carpetas
 
-// Performance
-// ====================================
-const connect = require('gulp-connect')
-const lighthouse = require('lighthouse')
-const ChromeLauncher = require('lighthouse/lighthouse-cli/chrome-launcher').ChromeLauncher
-const perfConfig = require('lighthouse/lighthouse-core/config/perf.json')
-let launcher
-
-var psi = require('psi')
-var exec = require('gulp-exec')
-
 // Parametros
 // ====================================
 
