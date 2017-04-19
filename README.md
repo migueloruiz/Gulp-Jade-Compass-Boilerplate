@@ -16,7 +16,7 @@ Lanza revision de estilos de codigo de archivos js y lanza testing unitario
 # Performans
 ```
 sudo npm install -g lighthouse
-``
+```
 
 # Lintern
 Por default el boilertplate cuneta con listerns
