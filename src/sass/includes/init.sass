@@ -1,0 +1,25 @@
+
+// ------ Colores ----------------------------------------------------
+$color: #078ad3
+
+// ------ Fonts ------------------------------------------------------
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,900")
+
+// ------ Utils ------------------------------------------------------
+$spacer: 20px
+
+// ------ Mixines -----------------------------------------
+
+// @include lato(300)
+@mixin lato($weight)
+  font-weight: $weight
+  font-family: "Lato", sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+// ------ Clases Silenciosas -----------------------------------------
+%flex-center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center

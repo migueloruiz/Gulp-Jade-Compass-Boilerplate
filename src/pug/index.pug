@@ -1,7 +1,9 @@
+include _includes/_mixins
+
 doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    title foo
-  body.html2pug
-    h1 bar
+html
+  include  _includes/_generalHead
+  body
+    +exapleMixine("id", "titulo", "Miguelo")
+    a( href="/next/" ) NEXT
+    img( src="/recursos_estaticos/assets/img/example.png" )
