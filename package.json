@@ -1,13 +1,15 @@
 {
   "name": "stiatic_web_boilerplate",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "Boilerplate para web statica",
   "author": "miguelo ruiz",
   "license": "ISC",
   "scripts": {
     "serve": "gulp clean && gulp",
-    "test": "gulp lint && mocha",
-    "performance": "echo \"lighthouse http://localhost:3000/\" "
+    "lint": "gulp lint",
+    "unitTest": "mocha ./testing/unit-test",
+    "performance": "echo \"lighthouse http://localhost:3000/\" ",
+    "bundleInfo": "gulp disc"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -21,6 +23,7 @@
     "chai": "^3.5.0",
     "cssnano": "^3.10.0",
     "del": "^2.2.2",
+    "disc": "^1.3.2",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.2.0",
@@ -34,7 +37,6 @@
     "gulp-eslint": "^3.0.1",
     "gulp-exec": "^2.1.3",
     "gulp-header": "^1.8.8",
-    "gulp-livereload": "^3.8.1",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.4.0",
     "gulp-pug": "^3.3.0",

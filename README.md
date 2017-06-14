@@ -3,13 +3,13 @@ SaticiWeb - Boilerplate
 
 # Iniciar Servidor de Desarrollo
 ```
-npm serve
+npm run serve
 ```
 este comando elimina la carpeta de distibucion *./dist* y ejecuta el comando *gulp default*, ek cual contrulle todo el proyecto
 
 # Testing
 ```
-npm test
+npm run unit-test
 ```
 Lanza revision de estilos de codigo de archivos js y lanza testing unitario
 
@@ -19,9 +19,15 @@ sudo npm install -g lighthouse
 ```
 
 # Lintern
+```
+npm run bundleInfo
+```
 Por default el boilertplate cuneta con listerns
 
 * JS: se utiliza [Es Lint](http://eslint.org/) con la guia de estilos [Standar JS](https://standardjs.com/)
+
+# Reports
+Generacion de repostes de la compusicion del Bundle
 
 # Commits y Documentación
 

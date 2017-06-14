@@ -1,4 +1,14 @@
-# [1.0.0] Claro Sports (17-04-2017)
+CHANGE LOG
+==================
+
+# [0.0.2] (14-06-2017)
+* :new: :sparkles: Soporte a Service Workers basico
+* :recycle: Soporte a todos los tipos de Assets y fonts
+* :recycle: Reacomodo de Archivos de Testing
+* :new: :sparkles: Generacion de reportes de bundle
+*	:books:	Actualización README.md
+
+# [0.0.1] (17-04-2017)
 
 * :wrench: :bug: Error de tooling
 * :books: Correcion README

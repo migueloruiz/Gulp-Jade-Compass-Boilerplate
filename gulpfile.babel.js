@@ -19,6 +19,8 @@ const eslint = require('gulp-eslint')
 // ====================================
 const pug = require('gulp-pug') // Prosesador Jade/Pug
 const browserify = require('browserify') // Prosesador Common Js
+const disc = require('disc')
+const fs = require('fs')
 // const babelify = require('babelify') // Prosesador ES2015
 const buffer = require('vinyl-buffer') // Buffer Bable
 const source = require('vinyl-source-stream')
@@ -41,21 +43,30 @@ const del = require('del') // Eliminacion de Carpetas
 const SRC = './src'
 const DEST = './dist'
 
-const DEST_JS_CSS = 'recursos_estaticos'
+const staticResurces = 'recursos_estaticos'
 
 const mainJsFileIn = `bundle.js`
 const mainJsSrc = `${SRC}/js/${mainJsFileIn}`
-const mainJsDist = `${DEST}/${DEST_JS_CSS}/js/`
+const mainJsDist = `${DEST}/${staticResurces}/js/`
 
-const mainCssDist = `${DEST}/${DEST_JS_CSS}/css/`
+const mainSWFileIn = `sw.js`
+const mainWsSrc = `${SRC}/js-sw/${mainSWFileIn}`
+const mainWsDist = `${DEST}/${staticResurces}/js-sw/`
 
-const mainJsonDist = `${DEST}/${DEST_JS_CSS}/json/`
-
-const mainAssetsDist = `${DEST}/${DEST_JS_CSS}/assets/`
+const mainCssDist = `${DEST}/${staticResurces}/css/`
+const mainJsonDist = `${DEST}/${staticResurces}/json/`
+const mainAssetsDist = `${DEST}/${staticResurces}/assets/`
+const assetsPath = './assets/**/*.*'
+const reportsOut = './reports'
 
 const PUG_FILES = [
   `${SRC}/pug/**/*.pug`,
-  `!${SRC}/pug/_includes/*.pug`
+  `!${SRC}/pug/includes/*.pug`
+]
+
+const SASS_FILES = [
+  `${SRC}/sass/*.{sass,scss}`,
+  `!${SRC}/sass/includes/*.{sass,scss}`
 ]
 
 const jsToLint = [
@@ -120,7 +131,7 @@ gulp.task('sass', function () {
     cssnano()
   ]
 
-  return gulp.src(`${SRC}/sass/*.sass`)
+  return gulp.src(SASS_FILES)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(plugins))
@@ -140,13 +151,11 @@ gulp.task('js', function () {
 
   return browserify({
     entries: mainJsSrc,
-    debug: true
+    debug: true,
+    fullPaths: true
   })
   .transform(
-    'babelify',
-    {
-      presets: ['es2015']
-    }
+    'babelify', { presets: ['es2015'] }
   )
   .bundle()
   .pipe(plumber({
@@ -174,6 +183,78 @@ gulp.task('js', function () {
 })
 gulp.task('jsWatch', ['js'], reload)
 
+// ===== JS-SW >> SW.js  ===============================================
+gulp.task('sw', function () {
+  var date = new Date()
+  var timeStamp = '/* Generado el :' + date + ' */\n\n'
+
+  return browserify({
+    entries: mainWsSrc,
+    debug: true,
+    fullPaths: true
+  })
+  .transform(
+    'babelify', { presets: ['es2015'] }
+  )
+  .bundle()
+  .pipe(plumber({
+    errorHandler: function (error) {
+      beep(2)
+      console.log('<======= Build SW.Js Error ========>')
+      console.log(error.message)
+      console.log(error.cause)
+      console.log(Object.keys(error))
+      this.emit('end')
+    }}))
+  .pipe(source(mainSWFileIn))
+  .pipe(buffer())
+  .pipe(sourcemaps.init({
+    loadMaps: true
+  }))
+  .pipe(uglify())
+  .pipe(header(timeStamp))
+  .pipe(sourcemaps.write('./maps'))
+  .pipe(plumber.stop())
+  .pipe(gulp.dest((file) => {
+    jsPrintFileChange(file)
+    return DEST
+  }))
+})
+gulp.task('swWatch', ['sw'], reload)
+
+
+// ===== Bundel Stats ===============================================
+gulp.task('disc', function () {
+  var date = new Date().toUTCString()
+  let path = String(`${reportsOut}/bundle/disc-${date}.html`)
+  return browserify({
+    entries: mainJsSrc,
+    fullPaths: true
+  })
+  .transform(
+    'babelify', { presets: ['es2015'] }
+  )
+  .bundle()
+  .pipe(disc())
+  .pipe(fs.createWriteStream(path.trim()))
+})
+
+// ===== SW Stats ===============================================
+gulp.task('discSW', function () {
+  var date = new Date().toUTCString()
+  let path = String(`${reportsOut}/sw/sw-${date}.html`)
+  return browserify({
+    entries: mainWsSrc,
+    fullPaths: true
+  })
+  .transform(
+    'babelify', { presets: ['es2015'] }
+  )
+  .bundle()
+  .pipe(disc())
+  .pipe(fs.createWriteStream(path.trim()))
+})
+
 // ===== JS Lint ===============================================
 gulp.task('lint', () => {
   return gulp.src(jsToLint)
@@ -184,14 +265,14 @@ gulp.task('lint', () => {
 
 // ===== Move Assets ===============================================
 gulp.task('moveAssets', function () {
-  return gulp.src(`./assets/**/*.{gif,jpg,png,eot,svg,ttf,woff}`)
+  return gulp.src(assetsPath)
     .pipe(gulp.dest(mainAssetsDist))
 })
 gulp.task('moveAssetsWatch', ['moveAssets'], reload)
 
 // ===== Move Assets ===============================================
 gulp.task('moveJSON', function () {
-  return gulp.src(`${SRC}/json/*.json`)
+  return gulp.src(`${SRC}/json/**/*.json`)
     .pipe(gulp.dest((file) => {
       jsonPrintFileChange(file)
       return mainJsonDist
@@ -205,18 +286,19 @@ gulp.task('clean', function () {
 })
 
 // ===== Default ===============================================
-gulp.task('serve', ['pug', 'sass', 'js', 'moveAssets', 'moveJSON'], function () {
+gulp.task('serve', ['pug', 'sass', 'js', 'sw', 'moveAssets', 'moveJSON'], function () {
   browserInit()
 
-  gulp.watch(`${SRC}/**/*.pug`, ['pugWatch'])
-  gulp.watch(`${SRC}/pug/_includes/*.pug`, ['includesUpdateWatch'])
+  gulp.watch(`${SRC}/pug/*.pug`, ['pugWatch'])
+  gulp.watch(`${SRC}/**/**/*.pug`, ['includesUpdateWatch'])
 
-  gulp.watch(`${SRC}/**/*.sass`, ['sass'])
+  gulp.watch([`${SRC}/sass/*.{sass,scss}`, `${SRC}/sass/includes/*.{sass,scss}`], ['sass'])
 
-  gulp.watch(`${SRC}/**/*.js`, ['jsWatch'])
+  gulp.watch(`${SRC}/js/**/*.js`, ['jsWatch'])
+  gulp.watch(`${SRC}/js-sw/**/*.js`, ['swWatch'])
 
-  gulp.watch(`./assets/**/*.{gif,jpg,png,eot,svg,ttf,woff}`, ['moveAssetsWatch'])
-  gulp.watch(`${SRC}/json/*.json`, ['moveJSONWatch'])
+  gulp.watch(assetsPath, ['moveAssetsWatch'])
+  gulp.watch(`${SRC}/json/**/*.json`, ['moveJSONWatch'])
 })
 
 gulp.task('default', ['serve'])

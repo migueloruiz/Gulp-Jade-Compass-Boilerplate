@@ -3,7 +3,7 @@
 var chai = require('chai')
 var assert = chai.assert
 
-var hello = require('../src/js/hello/hello.js')
+var hello = require('../../src/js/hello/hello.js')
 
 describe('Test Hello', function () {
   it('Saludo con Null', function () {
