@@ -49,6 +49,8 @@ const mainJsFileIn = `bundle.js`
 const mainJsSrc = `${SRC}/js/${mainJsFileIn}`
 const mainJsDist = `${DEST}/${staticResurces}/js/`
 
+const mainVendorFile = `vendor.js`
+
 const mainSWFileIn = `sw.js`
 const mainWsSrc = `${SRC}/js-sw/${mainSWFileIn}`
 const mainWsDist = `${DEST}/${staticResurces}/js-sw/`
@@ -58,6 +60,8 @@ const mainJsonDist = `${DEST}/${staticResurces}/json/`
 const mainAssetsDist = `${DEST}/${staticResurces}/assets/`
 const assetsPath = './assets/**/*.*'
 const reportsOut = './reports'
+
+const vendors = ['jquery']
 
 const PUG_FILES = [
   `${SRC}/pug/**/*.pug`,
@@ -129,6 +133,7 @@ gulp.task('sass', function () {
 
   var plugins = [
     cssnano()
+    // cssnano({zindex: false})
   ]
 
   return gulp.src(SASS_FILES)
@@ -144,20 +149,42 @@ gulp.task('sass', function () {
     .pipe(browserSync.stream({match: '**/*.css'}))
 })
 
+// ===== JS >> Vendor ===============================================
+gulp.task('vendor', () => {
+  var v = browserify({
+    debug: true
+  })
+
+  vendors.forEach(lib => {
+    v.require(lib)
+  })
+
+  return v.bundle()
+  .pipe(source('vendor.js'))
+  .pipe(gulp.dest((file) => {
+    jsPrintFileChange(file)
+    return mainJsDist
+  }))
+})
+
 // ===== JS >> Bundel ===============================================
 gulp.task('js', function () {
   var date = new Date()
   var timeStamp = '/* Generado el :' + date + ' */\n\n'
 
-  return browserify({
+  var b = browserify({
     entries: mainJsSrc,
-    debug: true,
-    fullPaths: true
+    debug: true
   })
   .transform(
     'babelify', { presets: ['es2015'] }
   )
-  .bundle()
+
+  vendors.forEach(lib => {
+    b.external(lib)
+  })
+
+  return b.bundle()
   .pipe(plumber({
     errorHandler: function (error) {
       beep(2)
@@ -222,7 +249,6 @@ gulp.task('sw', function () {
 })
 gulp.task('swWatch', ['sw'], reload)
 
-
 // ===== Bundel Stats ===============================================
 gulp.task('disc', function () {
   var date = new Date().toUTCString()
@@ -286,7 +312,7 @@ gulp.task('clean', function () {
 })
 
 // ===== Default ===============================================
-gulp.task('serve', ['pug', 'sass', 'js', 'sw', 'moveAssets', 'moveJSON'], function () {
+gulp.task('serve', ['pug', 'sass', 'js', 'vendor', 'sw', 'moveAssets', 'moveJSON'], function () {
   browserInit()
 
   gulp.watch(`${SRC}/pug/*.pug`, ['pugWatch'])
@@ -362,3 +388,8 @@ var sassPrintFileChange = function (file) {
     getFileName(file.history[1])
   )
 }
+
+// var sassPrintFileChange = _getVendor ( ) {
+//   let versionData = packageJSON.unotv_app_vertion
+//   return `${versionData.mayor}.${versionData.minor}.${versionData.patch}`
+// }

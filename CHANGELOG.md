@@ -1,5 +1,7 @@
 CHANGE LOG
 ==================
+# [0.0.2] (13-07-2017)
+* :construction: Construccion de vendor
 
 # [0.0.2] (14-06-2017)
 * :new: :sparkles: Soporte a Service Workers basico
