@@ -36,10 +36,11 @@ const uglify = require('gulp-uglify') // Minificar
 const header = require('gulp-header') // Escritura de Header para TimeStamp
 const changed = require('gulp-changed') // Rectificaccion de cambio en arcvhivo destino
 const del = require('del') // Eliminacion de Carpetas
+const concat = require('gulp-concat') // Concatenador para Vendor
 
 // Parametros
 // ====================================
-
+const packageJSON = require('./package.json')
 const SRC = './src'
 const DEST = './dist'
 
@@ -61,7 +62,7 @@ const mainAssetsDist = `${DEST}/${staticResurces}/assets/`
 const assetsPath = './assets/**/*.*'
 const reportsOut = './reports'
 
-const vendors = ['jquery']
+const vendors = ['./node_modules/jquery/dist/jquery.min.js']
 
 const PUG_FILES = [
   `${SRC}/pug/**/*.pug`,
@@ -151,16 +152,9 @@ gulp.task('sass', function () {
 
 // ===== JS >> Vendor ===============================================
 gulp.task('vendor', () => {
-  var v = browserify({
-    debug: true
-  })
-
-  vendors.forEach(lib => {
-    v.require(lib)
-  })
-
-  return v.bundle()
-  .pipe(source('vendor.js'))
+  let vendor = packageJSON.vendor
+  return gulp.src(vendor)
+  .pipe(concat(mainVendorFile))
   .pipe(gulp.dest((file) => {
     jsPrintFileChange(file)
     return mainJsDist
@@ -388,8 +382,3 @@ var sassPrintFileChange = function (file) {
     getFileName(file.history[1])
   )
 }
-
-// var sassPrintFileChange = _getVendor ( ) {
-//   let versionData = packageJSON.unotv_app_vertion
-//   return `${versionData.mayor}.${versionData.minor}.${versionData.patch}`
-// }

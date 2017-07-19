@@ -1,5 +1,8 @@
 CHANGE LOG
 ==================
+# [0.0.3] (19-07-2017)
+* :wrench: Soporte de Vendor.js
+
 # [0.0.2] (13-07-2017)
 * :construction: Construccion de vendor
 
